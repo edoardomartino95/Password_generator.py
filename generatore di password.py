@@ -16,10 +16,10 @@ charArr = [
 ]
 
 def genPsw(arr):
-    long = 16 #lunghezza della password
+    lunghezza = 16 #lunghezza della password
     psw = ''
 
-    for i in range(long): 
+    for i in range(lunghezza): 
         psw += charArr[random.randrange(len(charArr))] #randomizza una lettera per il massimo definito in long
     
     return psw
