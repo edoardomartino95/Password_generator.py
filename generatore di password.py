@@ -1,5 +1,4 @@
 import random 
-import time
 
 charArr = [
 'a','b','c','d','e','f','g',
@@ -10,21 +9,50 @@ charArr = [
 'J','K','L','M','N','O','P',
 'Q','R','S','T','U','V','W',
 'X','Y','Z','0','1','2','3',
-'4','5','6','7','8','9','@',
-'!','|','$','%','&','?','-',
-'_','+','*','#','£','=','€'
-]
+'4','5','6','7','8','9','!',
+'£','$','%','&','?','#','@']
 
-def genPsw(arr):
-    lunghezza = 16 #lunghezza della password
-    psw = ''
+def randomize_char(arr):
+    return random.randrange(len(arr)) #randomizza tutti i caratteri dell'array
 
-    for i in range(lunghezza): 
-        psw += charArr[random.randrange(len(charArr))] #randomizza una lettera per il massimo definito in long
+def gen_psw(arr, lung):
+    newLunghezza = lung #lunghezza della password
+    my_psw = ''
+
+    for _ in range(newLunghezza): 
+        my_psw += arr[randomize_char(arr)] #randomizza una lettera per il massimo definito in len_psw
     
-    return psw
-    
-print(genPsw(charArr))
-    
+    return my_psw
 
+if __name__ == '__main__':
+    
+    piccolaLunghezza = 8
+    mediaLunghezza = 16
+    massimaLunghezza = 32
 
+    print("""
+GENERATORE PASSWORD:
+Inserisci la lunghezza della password tra 8, 16, 32 caratteri.
+Inserisci 0 per uscire dal programma
+""")
+
+while True:
+    lunghezza = int(input("Inserisci la lunghezza: "))
+    if lunghezza == piccolaLunghezza:
+        print("La password scelta di " + str(piccolaLunghezza)+ " è: ", gen_psw(charArr, lunghezza))
+        break
+    elif lunghezza == mediaLunghezza:
+         print("La password scelta di " + str(mediaLunghezza)+ " è: ", gen_psw(charArr, lunghezza))
+         break
+    elif lunghezza == massimaLunghezza:
+         print("La password scelta di " + str(massimaLunghezza)+ " è: ", gen_psw(charArr, lunghezza))
+         break
+    elif lunghezza == 0:
+        
+        esci = input("Per uscire premi S altrimenti premi un pulsante qualsiasi: ")
+
+        if esci.lower() == "s":
+            print("PROGRMMA TERMINATO...")
+            break
+    else:
+        print("Inserisci un valore valido.")
