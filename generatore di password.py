@@ -16,7 +16,7 @@ charArr = [
 def randomize_char(arr):
     return random.randrange(len(arr)) #randomizza tutti i caratteri dell'array
 
-def gen_psw(arr, lung): 
+def gen_psw(arr, lung):
     my_psw = ''
 
     for _ in range(lung): 
@@ -32,8 +32,12 @@ if __name__ == '__main__':
 
     print("""
 GENERATORE PASSWORD:
-Inserisci la lunghezza della password tra 8, 16, 32 caratteri.
-Inserisci 0 per uscire dal programma
+Inserisci la lunghezza della password:
+          
+[8] Password ad otto caratteri
+[16] Password a sedici caratteri 
+[32] Password a trentadue caratterri
+[0] Esci dal programma
 """)
 
 while True:
