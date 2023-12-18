@@ -10,16 +10,16 @@ charArr = [
 'Q','R','S','T','U','V','W',
 'X','Y','Z','0','1','2','3',
 '4','5','6','7','8','9','!',
-'£','$','%','&','?','#','@']
+'£','$','%','&','?','#','@',
+"-", "_", "*", "|", "/", "§"]
 
 def randomize_char(arr):
     return random.randrange(len(arr)) #randomizza tutti i caratteri dell'array
 
-def gen_psw(arr, lung):
-    newLunghezza = lung #lunghezza della password
+def gen_psw(arr, lung): 
     my_psw = ''
 
-    for _ in range(newLunghezza): 
+    for _ in range(lung): 
         my_psw += arr[randomize_char(arr)] #randomizza una lettera per il massimo definito in len_psw
     
     return my_psw
