@@ -43,13 +43,13 @@ Inserisci la lunghezza della password:
 while True:
     lunghezza = int(input("Inserisci la lunghezza: "))
     if lunghezza == piccolaLunghezza:
-        print("La password scelta di " + str(piccolaLunghezza)+ " è: ", gen_psw(charArr, lunghezza))
+        print("La password scelta di " + str(piccolaLunghezza)+ " caratteri è: ", gen_psw(charArr, lunghezza))
         break
     elif lunghezza == mediaLunghezza:
-         print("La password scelta di " + str(mediaLunghezza)+ " è: ", gen_psw(charArr, lunghezza))
+         print("La password scelta di " + str(mediaLunghezza)+ " caratteri è: ", gen_psw(charArr, lunghezza))
          break
     elif lunghezza == massimaLunghezza:
-         print("La password scelta di " + str(massimaLunghezza)+ " è: ", gen_psw(charArr, lunghezza))
+         print("La password scelta di " + str(massimaLunghezza)+ " caratteri è: ", gen_psw(charArr, lunghezza))
          break
     elif lunghezza == 0:
         
